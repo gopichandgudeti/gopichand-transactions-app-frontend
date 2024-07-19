@@ -1,7 +1,8 @@
 import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
-/*import './index.css'*/
+
+import './index.css'
 
 class Login extends Component {
   state = {
@@ -54,44 +55,42 @@ class Login extends Component {
       return <Redirect to="/" />
     }
     return (
-      <div className="login-container">
-        <form className="form-container" onSubmit={this.submitForm}>
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-            alt="website logo"
-            className="login-website-logo"
-          />
-          <div className="input-container">
-            <label className="input-label" htmlFor="username">
-              USERNAME
-            </label>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              className="username-input-field"
-              onChange={this.onChangeUsername}
-              placeholder="Username"
-            />
-          </div>
-          <div className="input-container">
-            <label className="input-label" htmlFor="password">
-              PASSWORD
-            </label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              className="password-input-field"
-              onChange={this.onChangePassword}
-              placeholder="Password"
-            />
-          </div>
-          <button type="submit" className="login-button">
-            Login
-          </button>
-          {showSubmitError && <p className="error-message">*{errorMsg}</p>}
-        </form>
+      <div className="login-bg-container">
+        <div className="login-container">
+          <form className="form-container" onSubmit={this.submitForm}>
+            <h1 className="app-name">Keep Notes</h1>
+            <div className="input-container">
+              <label className="input-label" htmlFor="username">
+                Username
+              </label>
+              <input
+                type="text"
+                id="username"
+                value={username}
+                className="input-field"
+                onChange={this.onChangeUsername}
+                placeholder="Username"
+              />
+            </div>
+            <div className="input-container">
+              <label className="input-label" htmlFor="password">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                className="input-field"
+                onChange={this.onChangePassword}
+                placeholder="Password"
+              />
+            </div>
+            <button type="submit" className="login-button">
+              Login
+            </button>
+            {showSubmitError && <p className="error-message">*{errorMsg}</p>}
+          </form>
+        </div>
       </div>
     )
   }

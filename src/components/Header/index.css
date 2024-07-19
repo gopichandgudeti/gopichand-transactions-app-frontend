@@ -1,0 +1,56 @@
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 80px;
+  border-bottom: 1px solid grey;
+}
+
+.app-name {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: burlywood;
+}
+
+.logout-desktop-btn {
+  border-radius: 3px;
+  font-family: 'Roboto';
+  font-size: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 5px;
+  height: 30px;
+  width: 50px;
+  background-color: burlywood;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-icon {
+  font-size: 20px;
+}
+
+.search-input-bg-container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 40px;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 1px 1px grey;
+  outline: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-family: 'Roboto';
+}
+
+.search-input {
+  margin-left: 20px;
+  width: 80%;
+  height: 40px;
+  outline: none;
+  border: none;
+  font-size: 15px;
+}

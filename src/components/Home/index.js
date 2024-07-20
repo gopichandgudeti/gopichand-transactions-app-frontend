@@ -1,135 +1,67 @@
-import {Component} from 'react'
-import {IoColorPaletteOutline} from 'react-icons/io5'
+import {FaArrowRight} from 'react-icons/fa'
 
 import Header from '../Header'
 
 import './index.css'
 
-class Home extends Component {
-  state = {
-    noteInput: '',
-    notesList: [],
-    showBgColorOptions: false,
-    backgroundColor: '',
-  }
-
-  onChangeNote = event => {
-    this.setState({noteInput: event.target.value})
-  }
-
-  addNoteToNotesList = () => {
-    const {noteInput} = this.state
-
-    this.setState(prevNotes => ({
-      notesList: [...prevNotes.notesList, noteInput],
-      noteInput: '',
-    }))
-  }
-
-  onChangeBgColor = () => {
-    this.setState(prev => ({showBgColorOptions: !prev.showBgColorOptions}))
-  }
-
-  applyBgColor = event => {
-    if (event.target.value === 'red') {
-      this.setState({backgroundColor: 'red'})
-    } else if (event.target.value === 'blue') {
-      this.setState({backgroundColor: 'blue'})
-    } else if (event.target.value === 'green') {
-      this.setState({backgroundColor: 'green'})
-    } else if (event.target.value === 'yellow') {
-      this.setState({backgroundColor: 'yellow'})
-    } else {
-      this.setState({backgroundColor: ''})
-    }
-  }
-
-  render() {
-    const {noteInput, notesList, backgroundColor, showBgColorOptions} =
-      this.state
-
-    return (
-      <>
-        <Header />
-        <div className='home-bg-container'>
-          <div>
-            <p>Side bar</p>
-          </div>
-          <div className='home-container'>
-            <div className='note-input-add-btn-container'>
-              <div className='note-input-bg-container'>
-                <input
-                  type='text'
-                  className='note-input'
-                  placeholder='Write a note..'
-                  value={noteInput}
-                  onChange={this.onChangeNote}
-                />
-              </div>
-              <button
-                type='button'
-                className='add-note-btn'
-                onClick={this.addNoteToNotesList}
-              >
-                Add note
-              </button>
-            </div>
-
-            <ul className='notes-list-bg-container'>
-              {notesList.map(eachNote => (
-                <li className={`${backgroundColor} list-item`}>
-                  <p>{eachNote}</p>
-                  <div className='options-container'>
-                    <button
-                      type='button'
-                      onClick={this.onChangeBgColor}
-                      className='color-icon-btn'
-                    >
-                      <IoColorPaletteOutline className='icon' />
-                      {showBgColorOptions && (
-                        <div className='colors-cont'>
-                          <button
-                            type='button'
-                            onClick={this.applyBgColor}
-                            className='color-btn'
-                            value=''
-                          ></button>
-                          <button
-                            type='button'
-                            onClick={this.applyBgColor}
-                            className='red color-btn'
-                            value='red'
-                          ></button>
-                          <button
-                            type='button'
-                            onClick={this.applyBgColor}
-                            className='blue color-btn'
-                            value='blue'
-                          ></button>
-                          <button
-                            type='button'
-                            onClick={this.applyBgColor}
-                            className='green color-btn'
-                            value='green'
-                          ></button>
-                          <button
-                            type='button'
-                            onClick={this.applyBgColor}
-                            className='yellow color-btn'
-                            value='yellow'
-                          ></button>
-                        </div>
-                      )}
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+const Home = () => (
+  <>
+    <Header />
+    <div className="home-bg-cont">
+      <img
+        src="https://res.cloudinary.com/dy5es3bf4/image/upload/v1721444188/rf2shch2ale5xxfcaoro.png"
+        className="images"
+      />
+      <img
+        src="https://res.cloudinary.com/dy5es3bf4/image/upload/v1721444291/vrrvngm6otoki92dop05.png"
+        className="images"
+      />
+      <img
+        src="https://res.cloudinary.com/dy5es3bf4/image/upload/v1721444384/ugaldfby92iypy4qrunu.png"
+        className="images"
+      />
+      <div className="puja-seeva-items-cont">
+        <div className="puja-seeva-item">
+          <img
+            src="https://res.cloudinary.com/dy5es3bf4/image/upload/v1721444503/ge7ca8ntxysgwvdpconk.png"
+            className="images"
+          />
+          <button className="participate-btn">
+            PARTICIPATE{' '}
+            <span className="arrow-icon">
+              <FaArrowRight />
+            </span>
+          </button>
         </div>
-      </>
-    )
-  }
-}
+
+        <div className="puja-seeva-item">
+          <img
+            src="https://res.cloudinary.com/dy5es3bf4/image/upload/v1721444512/hs58oq1gpe3ft39kydwn.png"
+            className="images"
+          />
+          <button className="participate-btn">
+            PARTICIPATE{' '}
+            <span className="arrow-icon">
+              <FaArrowRight />
+            </span>
+          </button>
+        </div>
+
+        <div className="puja-seeva-item">
+          <img
+            src="https://res.cloudinary.com/dy5es3bf4/image/upload/v1721444522/gac9ob5ahbhm3iycc7j0.png"
+            className="images"
+          />
+          <button className="participate-btn">
+            PARTICIPATE{' '}
+            <span className="arrow-icon">
+              <FaArrowRight />
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </>
+)
 
 export default Home

@@ -1,19 +1,22 @@
 import {Component} from 'react'
-import {Route, Switch, Redirect} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 
-import Login from './components/Login'
 import Home from './components/Home'
-import ProtectedRoute from './components/ProtectedRoute'
+import Puja from './components/Puja'
+import PoojaPackages from './components/PoojaPackages'
 
 import './App.css'
 
 class App extends Component {
   render() {
     return (
-      <Switch>
-        <Route exact path="/login" component={Login} />
-        <ProtectedRoute exact path="/" component={Home} />
-      </Switch>
+      <>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/puja" component={Puja} />
+          <Route exact path="/poojapackages" component={PoojaPackages} />
+        </Switch>
+      </>
     )
   }
 }
